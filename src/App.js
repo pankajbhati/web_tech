@@ -11,6 +11,7 @@ import {
   AuthScreen,
   HomeScreen,
   CourseScreen,
+  ListScreen,
 } from "./Components/index";
 import Admin from "./Components/Admin";
 import Auth from "./Components/Login";
@@ -26,6 +27,7 @@ function App() {
         <Route path="/login" component={LoginScreen} />
         <Route path="/signup" component={SignupScreen} />
         <Route path="/courses" component={CourseScreen} />
+        <Route path="/list" component={ListScreen} />
         <Route path="/home" component={HomeScreen} />
         <Route path="/profile" component={ProfileScreen} />
         <Route path="/academics" component={Academics} />

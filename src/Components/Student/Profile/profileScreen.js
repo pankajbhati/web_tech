@@ -32,9 +32,9 @@ const ProfileScreen = () => {
       });
   };
 
-  useEffect(() => {
-    fetchData();
-  }, []);
+  // useEffect(() => {
+  //   fetchData();
+  // }, []);
 
   return (
     <div className="wrapper">

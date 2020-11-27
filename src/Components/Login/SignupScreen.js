@@ -45,7 +45,6 @@ const SignupScreen = () => {
       });
 
     console.log(data);
-    window.location = "/profile";
   };
 
   return (
@@ -93,7 +92,12 @@ const SignupScreen = () => {
               />
             </div>
           </div>
-          <button type="submit" onClick={() => handleSubmit()}>
+          <button
+            type="submit"
+            onClick={() => {
+              window.location = "/profile";
+            }}
+          >
             Register
           </button>
           <Link to="/login" style={{ textDecoration: "none" }}>

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./academics.css";
 import poster from "../../../images/poster.jpg";
+import { BaseUrl } from "../../constants";
 import { Sidebar } from "../../Navbar/Sidebar";
 
 const Academics = () => {

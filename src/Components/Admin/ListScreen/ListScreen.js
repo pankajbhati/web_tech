@@ -34,9 +34,9 @@ const ListScreen = () => {
       });
   };
 
-  useEffect(() => {
-    fetchData();
-  }, []);
+  // useEffect(() => {
+  //   fetchData();
+  // }, []);
 
   const Data = [
     {
@@ -163,6 +163,7 @@ const ListScreen = () => {
           options={{ search: false, paging: false }}
           onRowClick={(index, rowData) => {
             console.log("Row pressed on number " + rowData.name);
+            // window.location = "/list";
           }}
           actions={Actions}
         />

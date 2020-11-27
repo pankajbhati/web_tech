@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import loginImg from "../../images/login-img.jpg";
 import Mobile_login from "../../images/mobile_login.svg";
 import Avatar from "../../images/avatar.svg";
-import BaseUrl from "../constants";
+import { BaseUrl } from "../constants";
 import { Link, useLocation } from "react-router-dom";
 import "./login.css";
 
@@ -45,7 +45,6 @@ const LoginScreen = () => {
 
     // console.log("data in login function!!");
     // console.log(data);
-    // window.location = "/home";
   };
 
   return (
@@ -85,7 +84,12 @@ const LoginScreen = () => {
               />
             </div>
           </div>
-          <button type="submit" onClick={() => handleSubmit()}>
+          <button
+            type="submit"
+            onClick={() => {
+              window.location = "/home";
+            }}
+          >
             Login
           </button>
           <Link to="/signup" style={{ textDecoration: "none" }}>

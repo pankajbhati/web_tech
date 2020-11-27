@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./PaymentDues.css";
 import { Sidebar } from "../../Navbar/Sidebar";
+import { BaseUrl } from "../../constants";
 
 const PaymentDues = () => {
   const [data, setData] = useState(null);
@@ -31,9 +32,9 @@ const PaymentDues = () => {
       });
   };
 
-  useEffect(() => {
-    fetchData();
-  }, []);
+  // useEffect(() => {
+  //   fetchData();
+  // }, []);
 
   return (
     <div className="wrapper">

@@ -1,42 +1,40 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import "./CourseScreen.css";
 import MaterialTable from "material-table";
 import Reading from "../../../images/reading.svg";
-import {BaseUrl} from '../../constants';
+import { BaseUrl } from "../../constants";
 
 const CourseScreen = () => {
-
   const [data, setData] = useState(null);
 
   const fetchData = async () => {
     fetch(BaseUrl + "/courses", {
       method: "GET",
       headers: {
-        'Content-Type' : 'application/json',
+        "Content-Type": "application/json",
       },
-      body: {}
+      body: {},
     })
-    .then((res) => res.json())
-    .then((response) => {
-      if(response.status === 200){
-        try {
-          const courses = await response.data;
-          console.log(courses);
-          setData(courses);
+      .then((res) => res.json())
+      .then(async (response) => {
+        if (response.status === 200) {
+          try {
+            const courses = await response.data;
+            console.log(courses);
+            setData(courses);
+          } catch (err) {
+            console.log("courses error " + err);
+          }
         }
-        catch(err) {
-          console.log("courses error "+ err);
-        }
-      }
-    })
-    .catch((err) => {
-      console.log("courses error "+ err);
-    })
-  }
+      })
+      .catch((err) => {
+        console.log("courses error " + err);
+      });
+  };
 
-  useEffect(() => {
-    fetchData();
-  }, [])
+  // useEffect(() => {
+  //   fetchData();
+  // }, []);
 
   const Data = [
     {
@@ -75,7 +73,7 @@ const CourseScreen = () => {
       currentSem: "Seventh",
     },
     {
-      name: "Charvi",
+      name: "Arjun",
       rollNo: "2K17/CO/216",
       branch: "Computer Engineering",
       dob: "01/07/1999",
@@ -89,7 +87,7 @@ const CourseScreen = () => {
       currentSem: "Seventh",
     },
     {
-      name: "Charvi",
+      name: "Priyam",
       rollNo: "2K17/CO/216",
       branch: "Computer Engineering",
       dob: "01/07/1999",
@@ -103,7 +101,7 @@ const CourseScreen = () => {
       currentSem: "Seventh",
     },
     {
-      name: "Prince",
+      name: "Sachin",
       rollNo: "2K17/CO/216",
       branch: "Computer Engineering",
       dob: "01/07/1999",
@@ -146,6 +144,7 @@ const CourseScreen = () => {
       icon: "delete",
       tooltip: "Delete Index",
       onClick: (index, rowData) => {
+        window.location = "/list";
         console.log("Delete button pressed " + rowData.name);
       },
     },
@@ -163,6 +162,7 @@ const CourseScreen = () => {
           options={{ search: false, paging: false }}
           onRowClick={(index, rowData) => {
             console.log("Row pressed on number " + rowData.name);
+            window.location = "/list";
           }}
           actions={Actions}
         />
