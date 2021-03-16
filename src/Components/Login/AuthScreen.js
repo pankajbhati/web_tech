@@ -14,10 +14,24 @@ const AuthScreen = () => {
           <text className="auth-text">Choose your mode of login</text>
           <div className="auth-button">
             <Link to={{ pathname: "/login", state: { admin: true } }}>
-              <button className="auth-btn">I'm an Admin</button>
+              <button
+                className="auth-btn"
+                onClick={async () => {
+                  localStorage.setItem("isAdmin", true);
+                }}
+              >
+                I'm an Admin
+              </button>
             </Link>
             <Link to={{ pathname: "/login", state: { admin: false } }}>
-              <button className="auth-btn">I'm a Student</button>
+              <button
+                className="auth-btn"
+                onClick={async () => {
+                  localStorage.setItem("isAdmin", false);
+                }}
+              >
+                I'm a Student
+              </button>
             </Link>
           </div>
         </div>

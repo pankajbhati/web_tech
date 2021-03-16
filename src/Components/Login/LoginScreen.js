@@ -31,9 +31,11 @@ const LoginScreen = () => {
       .then(async (res) => {
         if (res.status == 200) {
           try {
-            await localStorage.setItem("token", res.data.token);
-            await localStorage.setItem("userId", res.data.id);
+            await localStorage.setItem("token", res.token);
+            await localStorage.setItem("userId", res.user_id);
+            // if(localStorage.getItem('isAdmin') == false)
             window.location = "/profile";
+            // else window.location = "/home";
           } catch (err) {
             console.log("login error " + err);
           }
@@ -60,7 +62,7 @@ const LoginScreen = () => {
           {/* {location.state.admin === true ? ( */}
           <text>{location.state.admin}</text>
           {/* ) : ( */}
-          <text>Student Login</text>
+          <text>User Login</text>
           {/* )} */}
           <div className="form">
             <div className="form-group">
@@ -87,7 +89,8 @@ const LoginScreen = () => {
           <button
             type="submit"
             onClick={() => {
-              window.location = "/home";
+              handleSubmit();
+              // window.location = "/home";
             }}
           >
             Login

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import loginImg from "../../images/login-img.jpg";
-import { Button } from "react-bootstrap";
 import Mobile_login from "../../images/mobile_login.svg";
 import Avatar from "../../images/avatar.svg";
 import { BaseUrl } from "../constants";
@@ -13,28 +12,22 @@ const SignupScreen = () => {
   const [password, setPassword] = useState("");
 
   const handleSubmit = async () => {
-    const data = {
-      username: username,
-      email: email,
-      password: password,
-    };
-
     fetch(BaseUrl + "/signup", {
       method: "POST",
       header: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        data: data,
+        username: username,
+        email: email,
+        password: password,
       }),
     })
       .then((res) => res.json())
       .then(async (response) => {
         if (response.status === 200) {
           try {
-            await localStorage.setItem("token", response.data.token);
-            await localStorage.setItem("userId", response.data.id);
-            window.location = "/profile";
+            window.location = "/login";
           } catch (err) {
             console.log("signup error " + err);
           }
@@ -44,7 +37,7 @@ const SignupScreen = () => {
         console.log("signup error " + err);
       });
 
-    console.log(data);
+    // console.log(data);
   };
 
   return (
@@ -95,7 +88,8 @@ const SignupScreen = () => {
           <button
             type="submit"
             onClick={() => {
-              window.location = "/profile";
+              // handleSubmit();
+              window.location = "/home";
             }}
           >
             Register

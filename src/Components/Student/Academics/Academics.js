@@ -12,16 +12,17 @@ const Academics = () => {
       method: "POST",
       header: {
         "Content-Type": "application/json",
+        Authorization: "TOKEN " + localStorage.getItem("token"),
       },
       body: JSON.stringify({
-        token: localStorage.getItem("token"),
-        userId: localStorage.getItem("userId"),
+        user_id: localStorage.getItem("userId"),
       }),
     })
       .then((res) => res.json())
       .then((res) => {
         if (res.status === 200) {
           try {
+            console.log(res);
             setData(res.data);
           } catch (err) {
             console.log("profile screen error " + err);
@@ -58,7 +59,7 @@ const Academics = () => {
                     type="text"
                     className="form-control col-sm-7"
                     id="inputEmail3"
-                    value="Pankaj Bhati"
+                    value="Kushagra"
                   />
                 </div>
                 <div className="form-group row">
@@ -71,7 +72,7 @@ const Academics = () => {
                     type="text"
                     className="form-control col-sm-7"
                     id="inputEmail3"
-                    value="Pankaj Bhati"
+                    value="12345"
                   />
                 </div>
                 <div className="form-group row">
@@ -82,7 +83,7 @@ const Academics = () => {
                     type="text"
                     className="form-control col-sm-7"
                     id="inputEmail3"
-                    value="Pankaj Bhati"
+                    value="12345"
                   />
                 </div>
                 <div className="form-group row">
@@ -95,7 +96,7 @@ const Academics = () => {
                     type="text"
                     className="form-control col-sm-7"
                     id="inputEmail3"
-                    value="Pankaj Bhati"
+                    value="Seventh"
                   />
                 </div>
                 <div className="form-group row">
@@ -108,7 +109,7 @@ const Academics = () => {
                     type="text"
                     className="form-control col-sm-7"
                     id="inputEmail3"
-                    value="Pankaj Bhati"
+                    value="96%"
                   />
                 </div>
                 <div className="form-group row">
@@ -121,7 +122,7 @@ const Academics = () => {
                     type="text"
                     className="form-control col-sm-7"
                     id="inputEmail3"
-                    value="Pankaj Bhati"
+                    value="8341"
                   />
                 </div>
                 <div className="form-group row">
@@ -132,7 +133,7 @@ const Academics = () => {
                     type="text"
                     className="form-control col-sm-7"
                     id="inputEmail3"
-                    value="Pankaj Bhati"
+                    value="U.P"
                   />
                 </div>
               </div>
@@ -145,7 +146,7 @@ const Academics = () => {
                     type="text"
                     className="form-control col-sm-7"
                     id="inputEmail3"
-                    value="Pankaj Bhati"
+                    value="Yadav"
                   />
                 </div>
                 <div className="form-group row">
@@ -158,7 +159,7 @@ const Academics = () => {
                     type="text"
                     className="form-control col-sm-7"
                     id="inputEmail3"
-                    value="Pankaj Bhati"
+                    value="12345"
                   />
                 </div>
                 <div className="form-group row">
@@ -171,7 +172,7 @@ const Academics = () => {
                     type="text"
                     className="form-control col-sm-7"
                     id="inputEmail3"
-                    value="Pankaj Bhati"
+                    value="2021"
                   />
                 </div>
                 <div className="form-group row">
@@ -182,7 +183,7 @@ const Academics = () => {
                     type="text"
                     className="form-control col-sm-7"
                     id="inputEmail3"
-                    value="Pankaj Bhati"
+                    value="COE"
                   />
                 </div>
                 <div className="form-group row">
@@ -195,7 +196,7 @@ const Academics = () => {
                     type="text"
                     className="form-control col-sm-7"
                     id="inputEmail3"
-                    value="Pankaj Bhati"
+                    value="10.0"
                   />
                 </div>
                 <div className="form-group row">
@@ -208,12 +209,12 @@ const Academics = () => {
                     type="text"
                     className="form-control col-sm-7"
                     id="inputEmail3"
-                    value="Pankaj Bhati"
+                    value="8341"
                   />
                 </div>
                 <div className="form-group row">
                   <label className="col-sm-5 col-form-label">
-                    Phone Number 2 :
+                    Phone Number :
                   </label>
 
                   <input
@@ -221,7 +222,7 @@ const Academics = () => {
                     type="text"
                     className="form-control col-sm-7"
                     id="inputEmail3"
-                    value="Pankaj Bhati"
+                    value="9634018669"
                   />
                 </div>
               </div>

@@ -12,6 +12,7 @@ const CourseScreen = () => {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
+        Authorization: "TOKEN " + localStorage.getItem("token"),
       },
       body: {},
     })
@@ -32,87 +33,73 @@ const CourseScreen = () => {
       });
   };
 
-  // useEffect(() => {
-  //   fetchData();
-  // }, []);
+  useEffect(() => {
+    fetchData();
+  }, []);
 
   const Data = [
     {
-      name: "Pankaj Bhati",
-      rollNo: "2K17/CO/216",
+      name: "Web Technology",
+      rollNo: "CO 301",
       branch: "Computer Engineering",
+      // dob: "01/07/1999",
+      currentSem: "Seventh",
+    },
+    {
+      name: "Distributed Networks",
+      rollNo: "CO 302",
+      branch: "Computer Engineering",
+      // dob: "01/07/1999",
+      currentSem: "Seventh",
+    },
+    {
+      name: "Cryptography",
+      rollNo: "CO 303",
+      branch: "Computer Engineering",
+      // dob: "01/07/1999",
+      currentSem: "Seventh",
+    },
+    {
+      name: "Algorithm And DataStructures",
+      rollNo: "CO 304",
+      branch: "Computer Engineering",
+      // dob: "01/07/1999",
+      currentSem: "Seventh",
+    },
+    {
+      name: "Microwave Engineering",
+      rollNo: "EC 403",
+      branch: "Electronics Engineering",
+      // dob: "01/07/1999",
+      currentSem: "Seventh",
+    },
+    {
+      name: "Optical COmmunication",
+      rollNo: "EC 407",
+      branch: "Electronics Engineering",
       dob: "01/07/1999",
       currentSem: "Seventh",
     },
     {
-      name: "Pankaj",
-      rollNo: "2K17/CO/216",
+      name: "Digital Electronics",
+      rollNo: "EC 201",
       branch: "Computer Engineering",
-      dob: "01/07/1999",
+      // dob: "01/07/1999",
+      currentSem: "Fourth",
+    },
+    {
+      name: "Swarm Analysis",
+      rollNo: "CO 305",
+      branch: "Computer Engineering",
+      // dob: "01/07/1999",
       currentSem: "Seventh",
     },
     {
-      name: "Bhati",
-      rollNo: "2K17/CO/216",
+      name: "Computer Vision",
+      rollNo: "CO 207",
       branch: "Computer Engineering",
-      dob: "01/07/1999",
-      currentSem: "Seventh",
-    },
-    {
-      name: "Tushaar",
-      rollNo: "2K17/CO/216",
-      branch: "Computer Engineering",
-      dob: "01/07/1999",
-      currentSem: "Seventh",
-    },
-    {
-      name: "Charvi",
-      rollNo: "2K17/CO/216",
-      branch: "Computer Engineering",
-      dob: "01/07/1999",
-      currentSem: "Seventh",
-    },
-    {
-      name: "Arjun",
-      rollNo: "2K17/CO/216",
-      branch: "Computer Engineering",
-      dob: "01/07/1999",
-      currentSem: "Seventh",
-    },
-    {
-      name: "Charvi",
-      rollNo: "2K17/CO/216",
-      branch: "Computer Engineering",
-      dob: "01/07/1999",
-      currentSem: "Seventh",
-    },
-    {
-      name: "Priyam",
-      rollNo: "2K17/CO/216",
-      branch: "Computer Engineering",
-      dob: "01/07/1999",
-      currentSem: "Seventh",
-    },
-    {
-      name: "Prince",
-      rollNo: "2K17/CO/216",
-      branch: "Computer Engineering",
-      dob: "01/07/1999",
-      currentSem: "Seventh",
-    },
-    {
-      name: "Sachin",
-      rollNo: "2K17/CO/216",
-      branch: "Computer Engineering",
-      dob: "01/07/1999",
-      currentSem: "Seventh",
-    },
-    {
-      name: "Prince",
-      rollNo: "2K17/CO/216",
-      branch: "Computer Engineering",
-      dob: "01/07/1999",
-      currentSem: "Seventh",
+      // dob: "01/07/1999",
+      currentSem: "Fourth",
     },
   ];
 
@@ -129,10 +116,10 @@ const CourseScreen = () => {
       title: "Branch",
       field: "branch",
     },
-    {
-      title: "Date of Birth",
-      field: "dob",
-    },
+    // {
+    //   title: "Date of Birth",
+    //   field: "dob",
+    // },
     {
       title: "Semester",
       field: "currentSem",
@@ -164,7 +151,7 @@ const CourseScreen = () => {
             console.log("Row pressed on number " + rowData.name);
             window.location = "/list";
           }}
-          actions={Actions}
+          // actions={Actions}
         />
       </div>
     </div>

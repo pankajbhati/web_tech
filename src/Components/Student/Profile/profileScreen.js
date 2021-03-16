@@ -7,20 +7,21 @@ const ProfileScreen = () => {
   const [data, setData] = useState([]);
 
   const fetchData = async () => {
-    fetch(BaseUrl + "/profile", {
+    fetch("http://127.0.0.1:8000/students/profile", {
       method: "POST",
       header: {
         "Content-Type": "application/json",
+        Authorization: "Token " + localStorage.getItem("token"),
       },
       body: JSON.stringify({
-        token: localStorage.getItem("token"),
-        userId: localStorage.getItem("userId"),
+        user_id: localStorage.getItem("userId"),
       }),
     })
       .then((res) => res.json())
       .then((res) => {
         if (res.status === 200) {
           try {
+            console.log(res);
             setData(res.data);
           } catch (err) {
             console.log("profile screen error " + err);
@@ -32,9 +33,9 @@ const ProfileScreen = () => {
       });
   };
 
-  // useEffect(() => {
-  //   fetchData();
-  // }, []);
+  useEffect(() => {
+    fetchData();
+  }, []);
 
   return (
     <div className="wrapper">
@@ -43,9 +44,9 @@ const ProfileScreen = () => {
           <Sidebar />
           <div className="profile">
             <div className="header">
-              <h2>Full Name</h2>
-              <h6>Computer Engineering</h6>
-              <h6>example@gmail.com</h6>
+              <h2>Kushagra Yadav</h2>
+              <h6>COE</h6>
+              <h6>kushagra123@gmail.com</h6>
             </div>
             <div className="content">
               <div className="split left">
@@ -59,7 +60,7 @@ const ProfileScreen = () => {
                     type="text"
                     className="form-control col-sm-7"
                     id="inputEmail3"
-                    value="Pankaj Bhati"
+                    value="Kushagra"
                   />
                 </div>
                 <div className="form-group row">
@@ -72,7 +73,7 @@ const ProfileScreen = () => {
                     type="text"
                     className="form-control col-sm-7"
                     id="inputEmail3"
-                    value="Pankaj Bhati"
+                    value="Kulveer Singh"
                   />
                 </div>
                 <div className="form-group row">
@@ -85,7 +86,7 @@ const ProfileScreen = () => {
                     type="text"
                     className="form-control col-sm-7"
                     id="inputEmail3"
-                    value="Pankaj Bhati"
+                    value="15-05-1998"
                   />
                 </div>
                 <div className="form-group row">
@@ -96,7 +97,7 @@ const ProfileScreen = () => {
                     type="text"
                     className="form-control col-sm-7"
                     id="inputEmail3"
-                    value="Pankaj Bhati"
+                    value="Male"
                   />
                 </div>
                 <div className="form-group row">
@@ -107,7 +108,7 @@ const ProfileScreen = () => {
                     type="text"
                     className="form-control col-sm-7"
                     id="inputEmail3"
-                    value="Pankaj Bhati"
+                    value="akjdsbchdbdc"
                   />
                 </div>
                 <div className="form-group row">
@@ -118,7 +119,7 @@ const ProfileScreen = () => {
                     type="text"
                     className="form-control col-sm-7"
                     id="inputEmail3"
-                    value="Pankaj Bhati"
+                    value="bareilly"
                   />
                 </div>
                 <div className="form-group row">
@@ -129,7 +130,7 @@ const ProfileScreen = () => {
                     type="text"
                     className="form-control col-sm-7"
                     id="inputEmail3"
-                    value="Pankaj Bhati"
+                    value="U.P"
                   />
                 </div>
               </div>
@@ -142,12 +143,12 @@ const ProfileScreen = () => {
                     type="text"
                     className="form-control col-sm-7"
                     id="inputEmail3"
-                    value="Pankaj Bhati"
+                    value="Yadav"
                   />
                 </div>
                 <div className="form-group row">
                   <label className="col-sm-5 col-form-label">
-                    Mother's Name :
+                    Family's Income :
                   </label>
 
                   <input
@@ -155,7 +156,7 @@ const ProfileScreen = () => {
                     type="text"
                     className="form-control col-sm-7"
                     id="inputEmail3"
-                    value="Pankaj Bhati"
+                    value="0"
                   />
                 </div>
                 <div className="form-group row">
@@ -168,7 +169,7 @@ const ProfileScreen = () => {
                     type="text"
                     className="form-control col-sm-7"
                     id="inputEmail3"
-                    value="Pankaj Bhati"
+                    value="Indian"
                   />
                 </div>
                 <div className="form-group row">
@@ -179,7 +180,7 @@ const ProfileScreen = () => {
                     type="text"
                     className="form-control col-sm-7"
                     id="inputEmail3"
-                    value="Pankaj Bhati"
+                    value="OBC"
                   />
                 </div>
                 <div className="form-group row">
@@ -190,7 +191,7 @@ const ProfileScreen = () => {
                     type="text"
                     className="form-control col-sm-7"
                     id="inputEmail3"
-                    value="Pankaj Bhati"
+                    value="Bairelly"
                   />
                 </div>
                 <div className="form-group row">
@@ -201,12 +202,12 @@ const ProfileScreen = () => {
                     type="text"
                     className="form-control col-sm-7"
                     id="inputEmail3"
-                    value="Pankaj Bhati"
+                    value="India"
                   />
                 </div>
                 <div className="form-group row">
                   <label className="col-sm-5 col-form-label">
-                    Phone Number 2 :
+                    Phone Number :
                   </label>
 
                   <input
@@ -214,7 +215,7 @@ const ProfileScreen = () => {
                     type="text"
                     className="form-control col-sm-7"
                     id="inputEmail3"
-                    value="Pankaj Bhati"
+                    value="9634018669"
                   />
                 </div>
               </div>

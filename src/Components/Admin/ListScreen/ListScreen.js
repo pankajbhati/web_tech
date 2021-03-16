@@ -34,9 +34,9 @@ const ListScreen = () => {
       });
   };
 
-  // useEffect(() => {
-  //   fetchData();
-  // }, []);
+  useEffect(() => {
+    fetchData();
+  }, []);
 
   const Data = [
     {
@@ -47,73 +47,73 @@ const ListScreen = () => {
       currentSem: "Seventh",
     },
     {
-      name: "Pankaj",
-      rollNo: "2K17/CO/216",
+      name: "Kushagra Yadav",
+      rollNo: "2K17/CO/166",
       branch: "Computer Engineering",
-      dob: "01/07/1999",
+      dob: "15/10/1998",
       currentSem: "Seventh",
     },
     {
-      name: "Bhati",
-      rollNo: "2K17/CO/216",
+      name: "Mrigank Singh",
+      rollNo: "2K17/CO/206",
       branch: "Computer Engineering",
-      dob: "01/07/1999",
+      dob: "11/03/1999",
       currentSem: "Seventh",
     },
     {
-      name: "Tushaar",
-      rollNo: "2K17/CO/216",
+      name: "Tushaar Salhotra",
+      rollNo: "2K17/CO/360",
       branch: "Computer Engineering",
-      dob: "01/07/1999",
+      dob: "11/07/1999",
       currentSem: "Seventh",
     },
     {
-      name: "Charvi",
-      rollNo: "2K17/CO/216",
+      name: "Kushagra Aggarwal",
+      rollNo: "2K17/CO/165",
       branch: "Computer Engineering",
-      dob: "01/07/1999",
+      dob: "26/05/1999",
       currentSem: "Seventh",
     },
     {
-      name: "Charvi",
-      rollNo: "2K17/CO/216",
+      name: "Saurabh Singh",
+      rollNo: "2K17/CO/345",
       branch: "Computer Engineering",
-      dob: "01/07/1999",
+      dob: "06/02/1999",
       currentSem: "Seventh",
     },
     {
-      name: "Charvi",
-      rollNo: "2K17/CO/216",
+      name: "Abhiraj Tulsyan",
+      rollNo: "2K17/CO/006",
       branch: "Computer Engineering",
-      dob: "01/07/1999",
+      dob: "10/04/1998",
       currentSem: "Seventh",
     },
     {
-      name: "Charvi",
-      rollNo: "2K17/CO/216",
-      branch: "Computer Engineering",
-      dob: "01/07/1999",
+      name: "Arjun Rana",
+      rollNo: "2K17/EP/12",
+      branch: "Engineering Physics",
+      dob: "03/10/1999",
       currentSem: "Seventh",
     },
     {
-      name: "Prince",
-      rollNo: "2K17/CO/216",
-      branch: "Computer Engineering",
-      dob: "01/07/1999",
+      name: "Prince CHoudhary",
+      rollNo: "2K17/EC/67",
+      branch: "Electronics Engineering",
+      dob: "06/12/1997",
       currentSem: "Seventh",
     },
     {
-      name: "Prince",
-      rollNo: "2K17/CO/216",
+      name: "Aviral Aggarwal",
+      rollNo: "2K17/CO/114",
       branch: "Computer Engineering",
-      dob: "01/07/1999",
+      dob: "12/06/1998",
       currentSem: "Seventh",
     },
     {
-      name: "Prince",
-      rollNo: "2K17/CO/216",
+      name: "Kumar Abhishek",
+      rollNo: "2K17/CO/189",
       branch: "Computer Engineering",
-      dob: "01/07/1999",
+      dob: "21/08/1998",
       currentSem: "Seventh",
     },
   ];
@@ -157,15 +157,15 @@ const ListScreen = () => {
       <div className="course-container">
         <MaterialTable
           // style={{ width: "100%" }}
-          title="List Screen Table"
+          title="Students List"
           data={Data}
           columns={Columns}
           options={{ search: false, paging: false }}
           onRowClick={(index, rowData) => {
             console.log("Row pressed on number " + rowData.name);
-            // window.location = "/list";
+            window.location = "/Profile";
           }}
-          actions={Actions}
+          // actions={Actions}
         />
       </div>
     </div>
